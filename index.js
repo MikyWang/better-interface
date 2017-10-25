@@ -4,7 +4,6 @@ const xlsx = require('better-xlsx');
 
 var parser = new xml2js.Parser();
 
-
 /**
  *文件配置
  * @constructor
@@ -22,6 +21,7 @@ function FileConfig(fileName) {
     var pattenT = /[a-z]*$/;
     this.type = patten.exec(fileName) ? patten.exec(fileName).shift() : 'pub';
     this.type = pattenT.exec(this.type).shift();
+    this.type = this.type == 'resq' ? 'resp' : this.type;
     if (this.type == 'req') {
         this.cnType = '请求报文';
     } else if (this.type == 'resp') {
@@ -41,6 +41,7 @@ function FileConfig(fileName) {
     }
     this.name = '';
     this.subClass = '';
+    this.pkg = '';
 }
 
 /**
@@ -171,10 +172,11 @@ function writeInfo(cellNames, sheet) {
 
 function setFileSheetSize(sheet) {
     sheet.setColWidth(0, 1, 5);
-    sheet.setColWidth(1, 3, 15);
+    sheet.setColWidth(1, 2, 15);
+    sheet.setColWidth(2, 3, 20);
     sheet.setColWidth(3, 4, 10);
     sheet.setColWidth(4, 6, 5);
-    sheet.setColWidth(6, 7, 20);
+    sheet.setColWidth(6, 7, 25);
 }
 
 function writeFileTitle(sheet, fileConfig) {
@@ -185,6 +187,7 @@ function writeFileTitle(sheet, fileConfig) {
         cell.value = cn;
         cell.style = getTitleStyle();
     });
+    console.log(fileConfig);
     if (fileConfig.cnType.indexOf('循环域') < 0 && fileConfig.type != 'pub') {
         const publicRow = sheet.addRow();
         const publicCell = publicRow.addCell();
@@ -198,15 +201,92 @@ function writeFileTitle(sheet, fileConfig) {
     }
 }
 
-function WorkBookConfig(workBookName) {
+function WorkBookConfig(workBookName, workFolder) {
     this.workbook = new xlsx.File();
     this.workBookName = workBookName;
+    this.workFolder = `./interface/` + workFolder;
+}
+
+function isXMLFile(fileName) {
+    return fileName.split('.')[1] == 'pkgidexml' ? true : false;
+}
+
+function isICXPFile(fileName) {
+    return fileName.split('.')[1] == 'pkgideicxp' ? true : false;
+}
+
+function getModels(fileConfig) {
+    const fileContent = findFile(fileConfig);
+    let models = [];
+    parser.parseString(fileContent, (err, result) => {
+        fileConfig.pkg = /^[a-z]*_[a-z]*/.exec(fileConfig.fileName).shift();
+        if (isICXPFile(fileConfig.fileName)) {
+            fileConfig.name = result['picxp:PICXPModel'].basicmodel[0].$.note;
+            models = result['picxp:PICXPModel'].fields;
+            fileConfig.subClass = result['picxp:PICXPModel'].basicmodel[0].$.subclass + `.xlsx`;
+        } else if (isXMLFile(fileConfig.fileName)) {
+            console.log(`处理文件:` + fileConfig.fileName);
+            if (result['pxml:PXMLModel'].root[0].children) {
+                models = result['pxml:PXMLModel'].root[0].children.filter((ch) => ch.$['xsi:type'] == "pxml:XMLNode");
+                models.parent = '/' + result['pxml:PXMLModel'].root[0].$.nodename + '/';
+            }
+            models = models ? models : null;
+            if (models && models.length == 1) {
+                let checkLevel = (parent, model) => {
+                    if (model.children) {
+                        models.level = models.level ? models.level + 1 : 1;
+                        parent.subModels = model.children;
+                        checkLevel(parent.subModels, parent.subModels[0]);
+                    }
+                };
+                checkLevel(models, models[0]);
+            }
+            fileConfig.name = result['pxml:PXMLModel'].basicmodel[0].$.note;
+            fileConfig.subClass = result['pxml:PXMLModel'].basicmodel[0].$.subclass + `.xlsx`;
+        }
+    });
+    return models;
+}
+
+function getField(fileConfig, models, model) {
+    const field = {};
+    if (isXMLFile(fileConfig.fileName)) {
+        if (model.$.inodexp) {
+            field.fieldName = models.parent ? models.parent + model.$.nodename : model.$.nodename;
+            field.fieldNote = model.$.note;
+            field.fieldLength = '';
+            field.fieldType = '';
+            field.info = model.$.inodexp.replace('[', '').replace(']', '').replace('gjj', 'gjj_efs');
+        }
+    } else if (isICXPFile(fileConfig.fileName)) {
+        if (model.$.fldref) {
+            field.fieldName = model.$.fldref.replace('/', '').replace('list|N/', '').replace('List|N/', '');
+            patten = /.*[\u4e00-\u9fa5]/;
+            field.fieldNote = patten.exec(model.$.note);
+            if (model.$.convexp) {
+                field.fieldLength = model.$.convexp.replace('|', 'P');
+            } else {
+                field.fieldLength = '';
+            }
+            let convfunc = 'ATOE';
+            if (model.convfunc[0].$) {
+                convfunc = model.convfunc[0].$.referdata;
+            }
+            field.fieldType = 'A';
+            if (convfunc === 'COMPRESSA2E' || convfunc === 'COMPRESSE2A') {
+                field.fieldType = 'P';
+            }
+            field.info = '';
+        }
+
+    } else {
+        throw new Error('暂不支持该报文格式,报文名为[' + fileConfig.fileName + ']');
+    }
+    return field;
 }
 
 var files = fs.readdirSync(`./file`);
 const workBookConfigs = [];
-// var workbook = new xlsx.File();
-// const workBookName = 'test.xlsx';
 
 let fileNO = 0;
 while (files.length != 0) {
@@ -216,16 +296,11 @@ while (files.length != 0) {
     let fileSheet = null;
     fileConfigs.forEach((fileConfig, index) => {
         var fileContent = findFile(fileConfig);
-        let models = {};
-        parser.parseString(fileContent, (err, result) => {
-            fileConfig.name = result['picxp:PICXPModel'].basicmodel[0].$.note;
-            models = result['picxp:PICXPModel'].fields;
-            fileConfig.subClass = result['picxp:PICXPModel'].basicmodel[0].$.subclass + `.xlsx`;
-        });
+        let models = getModels(fileConfig);
         if (index == 0) {
             let currentWorkBook = workBookConfigs.find((wbc => wbc.workBookName == fileConfig.subClass));
             if (!currentWorkBook) {
-                currentWorkBook = new WorkBookConfig(fileConfig.subClass);
+                currentWorkBook = new WorkBookConfig(fileConfig.subClass, fileConfig.pkg);
                 workBookConfigs.push(currentWorkBook);
                 const catesheet = currentWorkBook.workbook.addSheet('目录');
                 writeCateLog(catesheet);
@@ -241,24 +316,33 @@ while (files.length != 0) {
         cell.style.font.bold = true;
         cell.hMerge = 1;
         writeFileTitle(fileSheet, fileConfig);
+        if (models && models.level) {
+            let level = models.level;
+            while (level > 0) {
+                models.subModels.parent = models.parent ? models.parent + models[0].$.nodename + '/' : models[0].$.nodename + '/';
+                models = models.subModels;
+                level--;
+            }
+        }
         if (models) {
             let modelIndex = 0;
             models.forEach((model) => {
-                if (model.$.fldref) {
+                if (model.$.fldref || model.$.inodexp) {
                     modelIndex++;
-                    let fieldName = model.$.fldref.replace('/', '').replace('list|N/', '').replace('List|N/', '');
-                    let patten = /.*[\u4e00-\u9fa5]/;
-                    let fieldNote = patten.exec(model.$.note);
-                    let fieldLength = model.$.tranlen;
-                    let convfunc = 'ATOE';
-                    if (model.convfunc[0].$) {
-                        convfunc = model.convfunc[0].$.referdata;
-                    }
-                    let fieldType = 'A';
-                    if (convfunc === 'COMPRESSA2E' || convfunc === 'COMPRESSE2A') {
-                        fieldType = 'P';
-                    }
-                    let fieldCells = [modelIndex, fieldNote, fieldName, fieldType, fieldLength, '', ''];
+                    // let fieldName = model.$.fldref.replace('/', '').replace('list|N/', '').replace('List|N/', '');
+                    // let patten = /.*[\u4e00-\u9fa5]/;
+                    // let fieldNote = patten.exec(model.$.note);
+                    // let fieldLength = model.$.tranlen;
+                    // let convfunc = 'ATOE';
+                    // if (model.convfunc[0].$) {
+                    //     convfunc = model.convfunc[0].$.referdata;
+                    // }
+                    // let fieldType = 'A';
+                    // if (convfunc === 'COMPRESSA2E' || convfunc === 'COMPRESSE2A') {
+                    //     fieldType = 'P';
+                    // }
+                    const field = getField(fileConfig, models, model);
+                    let fieldCells = [modelIndex, field.fieldNote, field.fieldName, field.fieldType, field.fieldLength, '', field.info];
                     const fieldRow = fileSheet.addRow();
                     fieldCells.forEach((fc) => {
                         const fieldCell = fieldRow.addCell();
@@ -278,9 +362,23 @@ while (files.length != 0) {
     });
 }
 
-workBookConfigs.forEach((workBookConfig) => {
-    workBookConfig.workbook
-        .saveAs()
-        .pipe(fs.createWriteStream(`./interface/` + workBookConfig.workBookName))
-        .on('finish', () => console.log('Done.'));
-});
+generateBook(workBookConfigs);
+
+function generateBook(workBookConfigs) {
+    const workBookConfig = workBookConfigs.length > 0 ? workBookConfigs.shift() : null;
+    if (workBookConfig) {
+        if (!fs.existsSync(workBookConfig.workFolder)) {
+            fs.mkdirSync(workBookConfig.workFolder);
+        }
+        if (workBookConfig.workBookName == 'ATMP到公积金.xlsx') {
+            console.log('');
+        }
+        workBookConfig.workbook
+            .saveAs()
+            .pipe(fs.createWriteStream(workBookConfig.workFolder + '/' + workBookConfig.workBookName))
+            .on('finish', () => {
+                console.log('Done.');
+                generateBook(workBookConfigs);
+            });
+    }
+}
