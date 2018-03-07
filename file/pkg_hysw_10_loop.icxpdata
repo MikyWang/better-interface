@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="GBK"?>
+
+<hsdoc>
+  <docversion>1.0.0</docversion>
+  <checkcode>E66D7C2BFA0D4591499A8AB6C79C29B1</checkcode>
+  <levelcheck>4D615A7A4252492F5867733D</levelcheck>
+  <appresreg resclass="404" ressubclass="404" resname="pkg_hysw_10_loop" rescname="缴费查询返回循环子报文" reslabel="" resversn="" useflag="0" activeflag="0" extflag="00000000" readyflag="0" checkcode="@11@" lastModify="20110212113045" lastModifer="" rescreator="PKG导入" createdate="20110210100544" reslevel="9" subclass="">
+    <snote>缴费查询返回循环子报文</snote>
+    <document></document>
+    <icxpcfg>
+      <cfg fldsn="0" fldref="/hysw/resp/mx|N/sfjlh" fldtype="C" tranlen="9" cycletype="0" iprecision="0" izoom="0" iregular="L" cfiller="32" fseparator="" bseparator="" convfunc="" convexp="" readyflag="0" activeflag="0" dctname="">
+        <snote>水费记录号</snote>
+      </cfg>
+      <cfg fldsn="1" fldref="/hysw/resp/mx|N/sfny" fldtype="C" tranlen="6" cycletype="0" iprecision="0" izoom="0" iregular="L" cfiller="32" fseparator="" bseparator="" convfunc="" convexp="" readyflag="0" activeflag="0" dctname="">
+        <snote>水费年月</snote>
+      </cfg>
+      <cfg fldsn="2" fldref="/hysw/resp/mx|N/ysl" fldtype="C" tranlen="9" cycletype="0" iprecision="0" izoom="0" iregular="L" cfiller="32" fseparator="" bseparator="" convfunc="" convexp="" readyflag="0" activeflag="0" dctname="">
+        <snote>用水量</snote>
+      </cfg>
+      <cfg fldsn="3" fldref="/hysw/resp/mx|N/scye" fldtype="C" tranlen="5" cycletype="0" iprecision="0" izoom="0" iregular="L" cfiller="32" fseparator="" bseparator="" convfunc="" convexp="" readyflag="0" activeflag="0" dctname="">
+        <snote>上期结余</snote>
+      </cfg>
+      <cfg fldsn="4" fldref="/hysw/resp/mx|N/cbje" fldtype="C" tranlen="12" cycletype="0" iprecision="0" izoom="0" iregular="L" cfiller="32" fseparator="" bseparator="" convfunc="" convexp="" readyflag="0" activeflag="0" dctname="">
+        <snote>账单金额</snote>
+      </cfg>
+      <cfg fldsn="5" fldref="/hysw/resp/mx|N/bcye" fldtype="C" tranlen="5" cycletype="0" iprecision="0" izoom="0" iregular="L" cfiller="32" fseparator="" bseparator="" convfunc="" convexp="" readyflag="0" activeflag="0" dctname="">
+        <snote>本期结余</snote>
+      </cfg>
+      <cfg fldsn="6" fldref="/hysw/resp/mx|N/znj" fldtype="C" tranlen="12" cycletype="0" iprecision="0" izoom="0" iregular="L" cfiller="32" fseparator="" bseparator="" convfunc="" convexp="" readyflag="0" activeflag="0" dctname="">
+        <snote>滞纳金</snote>
+      </cfg>
+    </icxpcfg>
+    <pkgregex dftpath=""/>
+  </appresreg>
+</hsdoc>

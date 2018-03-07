@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="GBK"?>
+
+<hsdoc>
+  <docversion>1.0.0</docversion>
+  <checkcode>B53CE2D138FE026DDF986CFD86CF4901</checkcode>
+  <levelcheck>6A4D38463555676267346B3D</levelcheck>
+  <appresreg resclass="404" ressubclass="404" resname="pkg_hysw_30_rsp" rescname="交易冲正应答" reslabel="" resversn="" useflag="0" activeflag="0" extflag="00000000" readyflag="0" checkcode="@11@" lastModify="20110224164334" lastModifer="" rescreator="PKG导入" createdate="20110222135506" reslevel="9" subclass="">
+    <snote>交易冲正应答</snote>
+    <document></document>
+    <icxpcfg>
+      <cfg fldsn="0" fldref="/hysw/rsp/fhxxm" fldtype="C" tranlen="2" cycletype="0" iprecision="0" izoom="0" iregular="L" cfiller="32" fseparator="" bseparator="" convfunc="" convexp="" readyflag="0" activeflag="0" dctname="">
+        <snote>返回信息码</snote>
+      </cfg>
+      <cfg fldsn="1" fldref="/hysw/rsp/jym" fldtype="C" tranlen="2" cycletype="0" iprecision="0" izoom="0" iregular="L" cfiller="32" fseparator="" bseparator="" convfunc="" convexp="" readyflag="0" activeflag="0" dctname="">
+        <snote>交易码</snote>
+      </cfg>
+      <cfg fldsn="2" fldref="/hysw/rsp/czy" fldtype="C" tranlen="8" cycletype="0" iprecision="0" izoom="0" iregular="L" cfiller="32" fseparator="" bseparator="" convfunc="" convexp="" readyflag="0" activeflag="0" dctname="">
+        <snote>操作员</snote>
+      </cfg>
+      <cfg fldsn="3" fldref="/hysw/rsp/jylx" fldtype="C" tranlen="1" cycletype="0" iprecision="0" izoom="0" iregular="L" cfiller="32" fseparator="" bseparator="" convfunc="" convexp="" readyflag="0" activeflag="0" dctname="">
+        <snote>交易类型</snote>
+      </cfg>
+      <cfg fldsn="4" fldref="/hysw/rsp/sfjlh" fldtype="C" tranlen="9" cycletype="0" iprecision="0" izoom="0" iregular="L" cfiller="32" fseparator="" bseparator="" convfunc="" convexp="" readyflag="0" activeflag="0" dctname="">
+        <snote>冲正编号</snote>
+      </cfg>
+      <cfg fldsn="5" fldref="/hysw/rsp/czje" fldtype="C" tranlen="12" cycletype="0" iprecision="0" izoom="0" iregular="L" cfiller="32" fseparator="" bseparator="" convfunc="" convexp="" readyflag="0" activeflag="0" dctname="">
+        <snote>冲正金额</snote>
+      </cfg>
+      <cfg fldsn="6" fldref="/hysw/rsp/lsh" fldtype="C" tranlen="8" cycletype="0" iprecision="0" izoom="0" iregular="L" cfiller="32" fseparator="" bseparator="" convfunc="" convexp="" readyflag="0" activeflag="0" dctname="">
+        <snote>流水号</snote>
+      </cfg>
+    </icxpcfg>
+    <pkgregex dftpath=""/>
+  </appresreg>
+</hsdoc>

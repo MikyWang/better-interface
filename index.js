@@ -22,11 +22,11 @@ function FileConfig(fileName) {
     this.type = patten.exec(fileName) ? patten.exec(fileName).shift() : 'pub';
     this.type = pattenT.exec(this.type).shift();
     this.type = this.type == 'resq' ? 'resp' : this.type;
-    if (this.type == 'req') {
+    if (this.type == 'req' || this.type == 'req') {
         this.cnType = '请求报文';
-    } else if (this.type == 'resp') {
+    } else if (this.type == 'resp' || this.type == 'rsp') {
         this.cnType = '响应报文';
-    } else if (this.type == 'mx') {
+    } else if (this.type == 'mx' || this.type == 'loop') {
         this.type = 'resp';
         this.cnType = '响应报文';
     } else if (this.type == 'pub') {
@@ -36,7 +36,7 @@ function FileConfig(fileName) {
             this.cnType = '该交易特定响应报文头';
         }
     }
-    if (fileName.indexOf('mx') >= 0) {
+    if ((fileName.indexOf('mx') >= 0) || (fileName.indexOf('loop') >= 0)) {
         this.cnType += '循环域';
     }
     this.name = '';
@@ -215,11 +215,20 @@ function isICXPFile(fileName) {
     return fileName.split('.')[1] == 'pkgideicxp' ? true : false;
 }
 
+function isGAPSICXP(fileName) {
+    return fileName.split('.')[1] == 'icxpdata' ? true : false;
+}
+
 function getModels(fileConfig) {
     const fileContent = findFile(fileConfig);
     let models = [];
     parser.parseString(fileContent, (err, result) => {
         fileConfig.pkg = /^[a-z]*_[a-z]*/.exec(fileConfig.fileName).shift();
+        if (isGAPSICXP(fileConfig.fileName)) {
+            fileConfig.name = result.hsdoc.appresreg[0].snote[0];
+            models = result.hsdoc.appresreg[0].icxpcfg[0].cfg;
+            fileConfig.subClass = fileConfig.pkg + `.xlsx`;
+        }
         if (isICXPFile(fileConfig.fileName)) {
             fileConfig.name = result['picxp:PICXPModel'].basicmodel[0].$.note;
             models = result['picxp:PICXPModel'].fields;
@@ -250,7 +259,27 @@ function getModels(fileConfig) {
 
 function getField(fileConfig, models, model) {
     const field = {};
-    if (isXMLFile(fileConfig.fileName)) {
+    if (isGAPSICXP(fileConfig.fileName)) {
+        if (model.$.fldref) {
+            field.fieldName = model.$.fldref.split('/').pop().replace('/', '').replace('list|N/', '').replace('List|N/', '');
+            patten = /.*[\u4e00-\u9fa5]/;
+            field.fieldNote = patten.exec(model.snote[0]);
+            if (model.$.convexp) {
+                field.fieldLength = model.$.convexp.replace('|', 'P');
+            } else {
+                field.fieldLength = '';
+            }
+            let convfunc = 'ATOE';
+            if (model.$.convfunc) {
+                convfunc = model.convfunc[0].$.referdata;
+            }
+            field.fieldType = 'A';
+            if (convfunc === 'COMPRESSA2E' || convfunc === 'COMPRESSE2A') {
+                field.fieldType = 'P';
+            }
+            field.info = '';
+        }
+    } else if (isXMLFile(fileConfig.fileName)) {
         if (model.$.inodexp) {
             field.fieldName = models.parent ? models.parent + model.$.nodename : model.$.nodename;
             field.fieldNote = model.$.note;

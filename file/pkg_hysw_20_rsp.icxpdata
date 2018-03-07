@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="GBK"?>
+
+<hsdoc>
+  <docversion>1.0.0</docversion>
+  <checkcode>24BF08E9CEE5A48CB3D18E64B7BD4B3D</checkcode>
+  <levelcheck>57314E564A476A682B62303D</levelcheck>
+  <appresreg resclass="404" ressubclass="404" resname="pkg_hysw_20_rsp" rescname="缴费请求应答" reslabel="" resversn="" useflag="0" activeflag="0" extflag="00000000" readyflag="0" checkcode="@11@" lastModify="20110228181915" lastModifer="" rescreator="PKG导入" createdate="20110215201739" reslevel="9" subclass="">
+    <snote>缴费请求应答</snote>
+    <document></document>
+    <icxpcfg>
+      <cfg fldsn="0" fldref="/hysw/rsp/fhxxm" fldtype="C" tranlen="2" cycletype="0" iprecision="0" izoom="0" iregular="L" cfiller="32" fseparator="" bseparator="" convfunc="" convexp="" readyflag="0" activeflag="0" dctname="">
+        <snote>返回信息码</snote>
+      </cfg>
+      <cfg fldsn="1" fldref="/hysw/rsp/jym" fldtype="C" tranlen="2" cycletype="0" iprecision="0" izoom="0" iregular="L" cfiller="32" fseparator="" bseparator="" convfunc="" convexp="" readyflag="0" activeflag="0" dctname="">
+        <snote>交易码</snote>
+      </cfg>
+      <cfg fldsn="2" fldref="/hysw/rsp/czy" fldtype="C" tranlen="8" cycletype="0" iprecision="0" izoom="0" iregular="L" cfiller="32" fseparator="" bseparator="" convfunc="" convexp="" readyflag="0" activeflag="0" dctname="">
+        <snote>操作员</snote>
+      </cfg>
+      <cfg fldsn="3" fldref="/hysw/rsp/lsh" fldtype="C" tranlen="8" cycletype="0" iprecision="0" izoom="0" iregular="L" cfiller="32" fseparator="" bseparator="" convfunc="" convexp="" readyflag="0" activeflag="0" dctname="">
+        <snote>流水号</snote>
+      </cfg>
+      <cfg fldsn="4" fldref="/hysw/rsp/khbh" fldtype="C" tranlen="16" cycletype="0" iprecision="0" izoom="0" iregular="L" cfiller="32" fseparator="" bseparator="" convfunc="" convexp="" readyflag="0" activeflag="0" dctname="">
+        <snote>客户编号</snote>
+      </cfg>
+      <cfg fldsn="5" fldref="/hysw/rsp/ssje" fldtype="C" tranlen="12" cycletype="0" iprecision="0" izoom="0" iregular="L" cfiller="32" fseparator="" bseparator="" convfunc="" convexp="" readyflag="0" activeflag="0" dctname="">
+        <snote>实收金额</snote>
+      </cfg>
+      <cfg fldsn="6" fldref="/hysw/rsp/sfjlh" fldtype="C" tranlen="9" cycletype="0" iprecision="0" izoom="0" iregular="L" cfiller="32" fseparator="" bseparator="" convfunc="" convexp="" readyflag="0" activeflag="0" dctname="">
+        <snote>水费记录号</snote>
+      </cfg>
+      <cfg fldsn="7" fldref="/hysw/rsp/dyfpbz" fldtype="C" tranlen="1" cycletype="0" iprecision="0" izoom="0" iregular="L" cfiller="32" fseparator="" bseparator="" convfunc="" convexp="" readyflag="0" activeflag="0" dctname="">
+        <snote>打印发票标志</snote>
+      </cfg>
+      <cfg fldsn="8" fldref="/hysw/rsp/hm" fldtype="C" tranlen="64" cycletype="0" iprecision="0" izoom="0" iregular="L" cfiller="32" fseparator="" bseparator="" convfunc="" convexp="" readyflag="0" activeflag="0" dctname="">
+        <snote>户名</snote>
+      </cfg>
+      <cfg fldsn="9" fldref="/hysw/rsp/yhdz" fldtype="C" tranlen="64" cycletype="0" iprecision="0" izoom="0" iregular="L" cfiller="32" fseparator="" bseparator="" convfunc="" convexp="" readyflag="0" activeflag="0" dctname="">
+        <snote>用户地址</snote>
+      </cfg>
+      <cfg fldsn="10" fldref="/hysw/rsp/sfny" fldtype="C" tranlen="6" cycletype="0" iprecision="0" izoom="0" iregular="L" cfiller="32" fseparator="" bseparator="" convfunc="" convexp="" readyflag="0" activeflag="0" dctname="">
+        <snote>水费年月</snote>
+      </cfg>
+      <cfg fldsn="11" fldref="/hysw/rsp/cc" fldtype="C" tranlen="2" cycletype="0" iprecision="0" izoom="0" iregular="L" cfiller="32" fseparator="" bseparator="" convfunc="" convexp="" readyflag="0" activeflag="0" dctname="">
+        <snote>超次</snote>
+      </cfg>
+      <cfg fldsn="12" fldref="/hysw/rsp/cbrq" fldtype="C" tranlen="8" cycletype="0" iprecision="0" izoom="0" iregular="L" cfiller="32" fseparator="" bseparator="" convfunc="" convexp="" readyflag="0" activeflag="0" dctname="">
+        <snote>超表日期</snote>
+      </cfg>
+      <cfg fldsn="13" fldref="/hysw/rsp/cbzt" fldtype="C" tranlen="16" cycletype="0" iprecision="0" izoom="0" iregular="L" cfiller="32" fseparator="" bseparator="" convfunc="" convexp="" readyflag="0" activeflag="0" dctname="">
+        <snote>抄表状态</snote>
+      </cfg>
+      <cfg fldsn="14" fldref="/hysw/rsp/sccm" fldtype="C" tranlen="9" cycletype="0" iprecision="0" izoom="0" iregular="L" cfiller="32" fseparator="" bseparator="" convfunc="" convexp="" readyflag="0" activeflag="0" dctname="">
+        <snote>上次超码</snote>
+      </cfg>
+      <cfg fldsn="15" fldref="/hysw/rsp/bccm" fldtype="C" tranlen="9" cycletype="0" iprecision="0" izoom="0" iregular="L" cfiller="32" fseparator="" bseparator="" convfunc="" convexp="" readyflag="0" activeflag="0" dctname="">
+        <snote>本次超码</snote>
+      </cfg>
+      <cfg fldsn="16" fldref="/hysw/rsp/scye" fldtype="C" tranlen="5" cycletype="0" iprecision="0" izoom="0" iregular="L" cfiller="32" fseparator="" bseparator="" convfunc="" convexp="" readyflag="0" activeflag="0" dctname="">
+        <snote>上期结余</snote>
+      </cfg>
+      <cfg fldsn="17" fldref="/hysw/rsp/zdje" fldtype="C" tranlen="12" cycletype="0" iprecision="0" izoom="0" iregular="L" cfiller="32" fseparator="" bseparator="" convfunc="" convexp="" readyflag="0" activeflag="0" dctname="">
+        <snote>账单金额</snote>
+      </cfg>
+      <cfg fldsn="18" fldref="/hysw/rsp/bcye" fldtype="C" tranlen="5" cycletype="0" iprecision="0" izoom="0" iregular="L" cfiller="32" fseparator="" bseparator="" convfunc="" convexp="" readyflag="0" activeflag="0" dctname="">
+        <snote>本期余额</snote>
+      </cfg>
+      <cfg fldsn="19" fldref="/hysw/rsp/znj" fldtype="C" tranlen="12" cycletype="0" iprecision="0" izoom="0" iregular="L" cfiller="32" fseparator="" bseparator="" convfunc="" convexp="" readyflag="0" activeflag="0" dctname="">
+        <snote>违约金</snote>
+      </cfg>
+      <cfg fldsn="20" fldref="/hysw/rsp/pricecount" fldtype="C" tranlen="2" cycletype="0" iprecision="0" izoom="0" iregular="L" cfiller="32" fseparator="" bseparator="" convfunc="" convexp="" readyflag="0" activeflag="0" dctname="">
+        <snote>用水性质组成数</snote>
+      </cfg>
+      <cfg fldsn="21" fldref="pkg_hysw_20_loop" fldtype="S" tranlen="[/hysw/rsp/pricecount]" cycletype="1" iprecision="0" izoom="0" iregular="L" cfiller="32" fseparator="" bseparator="" convfunc="" convexp="" readyflag="0" activeflag="0" dctname="">
+        <snote>发票信息循环报文</snote>
+      </cfg>
+      <cfg fldsn="22" fldref="/hysw/rsp/beiz" fldtype="C" tranlen="64" cycletype="0" iprecision="0" izoom="0" iregular="L" cfiller="32" fseparator="" bseparator="" convfunc="" convexp="" readyflag="0" activeflag="0" dctname="">
+        <snote>备注</snote>
+      </cfg>
+    </icxpcfg>
+    <pkgregex dftpath=""/>
+  </appresreg>
+</hsdoc>
