@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="GBK"?>
+
+<hsdoc>
+  <docversion>1.0.0</docversion>
+  <checkcode>0E3D576E0023A3D35DF6995F9B7C70A9</checkcode>
+  <levelcheck>5537445A6134684C4748493D</levelcheck>
+  <appresreg resclass="402" ressubclass="400" resname="pkg_ghrq_O2I_8686" rescname="【外围渠道接入】港华燃气缴费冲正（外部XML转内部XML）" reslabel="" resversn="" useflag="0" activeflag="0" extflag="" readyflag="0" checkcode="" lastModify="2016-03-31 08:28:54" lastModifer="曹龙" rescreator="hsdz2" createdate="2015-08-05 10:15:26" reslevel="9" subclass="">
+    <snote></snote>
+    <document></document>
+    <xmlpcfg>
+      <cfg fldsn="0" nodename="root_in" nodetype="0" fldref="" fnodename="" inodetype="0" ivaltype="0" iprecision="0" inodexp="" dctname="" readyflag="" activeflag="">
+        <snote></snote>
+      </cfg>
+      <cfg fldsn="1" nodename="pub" nodetype="0" fldref="/pub" fnodename="/root_in" inodetype="0" ivaltype="0" iprecision="0" inodexp="" dctname="" readyflag="" activeflag="">
+        <snote></snote>
+      </cfg>
+      <cfg fldsn="2" nodename="jgm" nodetype="0" fldref="/pub/jgm" fnodename="/root_in/pub" inodetype="0" ivaltype="0" iprecision="0" inodexp="[/data2]" dctname="" readyflag="" activeflag="">
+        <snote>机构码</snote>
+      </cfg>
+      <cfg fldsn="3" nodename="czy" nodetype="0" fldref="/pub/czy" fnodename="/root_in/pub" inodetype="0" ivaltype="0" iprecision="0" inodexp="[/data3]" dctname="" readyflag="" activeflag="">
+        <snote>操作员</snote>
+      </cfg>
+      <cfg fldsn="4" nodename="jyrq" nodetype="0" fldref="/pub/jyrq" fnodename="/root_in/pub" inodetype="0" ivaltype="0" iprecision="0" inodexp="[/data11]" dctname="" readyflag="" activeflag="">
+        <snote>交易日期</snote>
+      </cfg>
+      <cfg fldsn="5" nodename="jyjgh" nodetype="0" fldref="/pub/jyjgh" fnodename="/root_in/pub" inodetype="0" ivaltype="0" iprecision="0" inodexp="[/data2]" dctname="" readyflag="" activeflag="">
+        <snote>交易机构号</snote>
+      </cfg>
+      <cfg fldsn="6" nodename="txcs" nodetype="0" fldref="/pub/txcs" fnodename="/root_in/pub" inodetype="0" ivaltype="0" iprecision="0" inodexp="[/data82]" dctname="" readyflag="" activeflag="">
+        <snote>通讯次数</snote>
+      </cfg>
+      <cfg fldsn="7" nodename="ghrqjr" nodetype="0" fldref="/ghrqjr" fnodename="/root_in" inodetype="0" ivaltype="0" iprecision="0" inodexp="" dctname="" readyflag="" activeflag="">
+        <snote></snote>
+      </cfg>
+      <cfg fldsn="8" nodename="txcs" nodetype="0" fldref="/ghrqjr/txcs" fnodename="/root_in/ghrqjr" inodetype="0" ivaltype="0" iprecision="0" inodexp="[/data82]" dctname="" readyflag="" activeflag="">
+        <snote>通讯次数</snote>
+      </cfg>
+      <cfg fldsn="9" nodename="khbh" nodetype="0" fldref="/ghrqjr/khbh" fnodename="/root_in/ghrqjr" inodetype="0" ivaltype="0" iprecision="0" inodexp="[/data65]" dctname="" readyflag="" activeflag="">
+        <snote>客户编号</snote>
+      </cfg>
+      <cfg fldsn="10" nodename="yjfls" nodetype="0" fldref="/ghrqjr/yjfls" fnodename="/root_in/ghrqjr" inodetype="0" ivaltype="0" iprecision="0" inodexp="[/data14]" dctname="" readyflag="" activeflag="">
+        <snote>原缴费流水</snote>
+      </cfg>
+      <cfg fldsn="11" nodename="yjyrq" nodetype="0" fldref="/ghrqjr/yjyrq" fnodename="/root_in/ghrqjr" inodetype="0" ivaltype="0" iprecision="0" inodexp="[/data12]" dctname="" readyflag="" activeflag="">
+        <snote>原交易日期</snote>
+      </cfg>
+    </xmlpcfg>
+  </appresreg>
+</hsdoc>

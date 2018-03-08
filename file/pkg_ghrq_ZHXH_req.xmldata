@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="GBK"?>
+
+<hsdoc>
+  <docversion>1.0.0</docversion>
+  <checkcode>A18CE30CC6CF7A9ADC375A925008C91A</checkcode>
+  <levelcheck>41585277696E574267436F3D</levelcheck>
+  <appresreg resclass="402" ressubclass="400" resname="pkg_ghrq_O2I_ZHXH" rescname="【外围渠道接入】用户账号销户查询是否存在签约关系（外部XML转内部XML）" reslabel="" resversn="" useflag="0" activeflag="0" extflag="" readyflag="0" checkcode="" lastModify="2016-04-15 13:31:14" lastModifer="曹龙" rescreator="hsdz2" createdate="2015-08-05 10:15:26" reslevel="9" subclass="">
+    <snote></snote>
+    <document></document>
+    <xmlpcfg>
+      <cfg fldsn="0" nodename="root_in" nodetype="0" fldref="" fnodename="" inodetype="0" ivaltype="0" iprecision="0" inodexp="" dctname="" readyflag="" activeflag="">
+        <snote></snote>
+      </cfg>
+      <cfg fldsn="1" nodename="pub" nodetype="0" fldref="/pub" fnodename="/root_in" inodetype="0" ivaltype="0" iprecision="0" inodexp="" dctname="" readyflag="" activeflag="">
+        <snote></snote>
+      </cfg>
+      <cfg fldsn="2" nodename="jgm" nodetype="0" fldref="/pub/jgm" fnodename="/root_in/pub" inodetype="0" ivaltype="0" iprecision="0" inodexp="[/data2]" dctname="" readyflag="" activeflag="">
+        <snote>机构码</snote>
+      </cfg>
+      <cfg fldsn="3" nodename="czy" nodetype="0" fldref="/pub/czy" fnodename="/root_in/pub" inodetype="0" ivaltype="0" iprecision="0" inodexp="[/data3]" dctname="" readyflag="" activeflag="">
+        <snote>操作员</snote>
+      </cfg>
+      <cfg fldsn="4" nodename="jyrq" nodetype="0" fldref="/pub/jyrq" fnodename="/root_in/pub" inodetype="0" ivaltype="0" iprecision="0" inodexp="[/data85]" dctname="" readyflag="" activeflag="">
+        <snote>交易日期</snote>
+      </cfg>
+      <cfg fldsn="5" nodename="ghrqjr" nodetype="0" fldref="/ghrqjr" fnodename="/root_in" inodetype="0" ivaltype="0" iprecision="0" inodexp="" dctname="" readyflag="" activeflag="">
+        <snote></snote>
+      </cfg>
+      <cfg fldsn="6" nodename="zh" nodetype="0" fldref="/ghrqjr/zh" fnodename="/root_in/ghrqjr" inodetype="0" ivaltype="0" iprecision="0" inodexp="[/data23]" dctname="" readyflag="" activeflag="">
+        <snote>银行账户</snote>
+      </cfg>
+    </xmlpcfg>
+  </appresreg>
+</hsdoc>

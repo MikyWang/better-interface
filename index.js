@@ -82,6 +82,10 @@ function getSameInterface(file) {
     return fileConfigs;
 }
 
+function isGAPSXML(fileName) {
+    return fileName.split('.')[1] == 'xmldata' ? true : false;
+}
+
 function isXMLFile(fileName) {
     return fileName.split('.')[1] == 'pkgidexml' ? true : false;
 }
@@ -99,16 +103,22 @@ function getModels(fileConfig) {
     let models = [];
     parser.parseString(fileContent, (err, result) => {
         fileConfig.pkg = /^[a-z]*_[a-z]*/.exec(fileConfig.fileName).shift();
-        if (isGAPSICXP(fileConfig.fileName)) {
+        if (isGAPSXML(fileConfig.fileName)) {
+            fileConfig.name = result.hsdoc.appresreg[0].$.rescname;
+            models = result.hsdoc.appresreg[0].xmlpcfg[0].cfg;
+            fileConfig.subClass = fileConfig.pkg + `.xlsx`;
+        }
+        else if (isGAPSICXP(fileConfig.fileName)) {
             fileConfig.name = result.hsdoc.appresreg[0].snote[0];
             models = result.hsdoc.appresreg[0].icxpcfg[0].cfg;
             fileConfig.subClass = fileConfig.pkg + `.xlsx`;
         }
-        if (isICXPFile(fileConfig.fileName)) {
+        else if (isICXPFile(fileConfig.fileName)) {
             fileConfig.name = result['picxp:PICXPModel'].basicmodel[0].$.note;
             models = result['picxp:PICXPModel'].fields;
             fileConfig.subClass = result['picxp:PICXPModel'].basicmodel[0].$.subclass + `.xlsx`;
-        } else if (isXMLFile(fileConfig.fileName)) {
+        }
+        else if (isXMLFile(fileConfig.fileName)) {
             console.log(`处理文件:` + fileConfig.fileName);
             if (result['pxml:PXMLModel'].root[0].children) {
                 models = result['pxml:PXMLModel'].root[0].children.filter((ch) => ch.$['xsi:type'] == "pxml:XMLNode");
@@ -134,7 +144,7 @@ function getModels(fileConfig) {
 
 function getField(fileConfig, models, model) {
     const field = {};
-    if (isGAPSICXP(fileConfig.fileName)) {
+    if (isGAPSICXP(fileConfig.fileName) || isGAPSXML(fileConfig.fileName)) {
         if (model.$.fldref) {
             field.fieldName = model.$.fldref.split('/').pop().replace('/', '').replace('list|N/', '').replace('List|N/', '');
             patten = /.*[\u4e00-\u9fa5]/;

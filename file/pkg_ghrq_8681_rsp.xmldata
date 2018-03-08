@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="GBK"?>
+
+<hsdoc>
+  <docversion>1.0.0</docversion>
+  <checkcode>FFAB2BB34304056348F657E5124DCE9D</checkcode>
+  <levelcheck>747338655A7A52707135383D</levelcheck>
+  <appresreg resclass="402" ressubclass="400" resname="pkg_ghrq_I2O_8681" rescname="【外围渠道接入】港华燃气欠费查询（内部XML转外部XML）" reslabel="" resversn="" useflag="0" activeflag="0" extflag="" readyflag="0" checkcode="" lastModify="2016-03-29 17:41:21" lastModifer="曹龙" rescreator="hsdz2" createdate="2015-08-05 10:15:26" reslevel="9" subclass="">
+    <snote></snote>
+    <document></document>
+    <xmlpcfg>
+      <cfg fldsn="0" nodename="root" nodetype="0" fldref="" fnodename="" inodetype="0" ivaltype="0" iprecision="0" inodexp="" dctname="" readyflag="" activeflag="">
+        <snote></snote>
+      </cfg>
+      <cfg fldsn="1" nodename="data63" nodetype="0" fldref="/data63" fnodename="/root" inodetype="0" ivaltype="0" iprecision="0" inodexp="[/pub/respcode]" dctname="" readyflag="" activeflag="">
+        <snote>响应码</snote>
+      </cfg>
+      <cfg fldsn="2" nodename="data64" nodetype="0" fldref="/data64" fnodename="/root" inodetype="0" ivaltype="0" iprecision="0" inodexp="[/pub/respmsg]" dctname="" readyflag="" activeflag="">
+        <snote>响应信息</snote>
+      </cfg>
+      <cfg fldsn="3" nodename="data20" nodetype="0" fldref="/data20" fnodename="/root" inodetype="0" ivaltype="0" iprecision="0" inodexp="[/root/result/sjh]" dctname="" readyflag="" activeflag="">
+        <snote>速记号</snote>
+      </cfg>
+      <cfg fldsn="4" nodename="data65" nodetype="0" fldref="/data65" fnodename="/root" inodetype="0" ivaltype="0" iprecision="0" inodexp="[/root/result/khbh]" dctname="" readyflag="" activeflag="">
+        <snote>户名</snote>
+      </cfg>
+      <cfg fldsn="5" nodename="data79" nodetype="0" fldref="/data79" fnodename="/root" inodetype="0" ivaltype="0" iprecision="0" inodexp="[/root/result/name]" dctname="" readyflag="" activeflag="">
+        <snote>客户名</snote>
+      </cfg>
+      <cfg fldsn="6" nodename="data43" nodetype="0" fldref="/data43" fnodename="/root" inodetype="0" ivaltype="0" iprecision="0" inodexp="[/root/result/addr]" dctname="" readyflag="" activeflag="">
+        <snote>客户地址</snote>
+      </cfg>
+      <cfg fldsn="7" nodename="data49" nodetype="0" fldref="/data49" fnodename="/root" inodetype="0" ivaltype="0" iprecision="0" inodexp="[/root/result/qfje]" dctname="" readyflag="" activeflag="">
+        <snote>欠费金额</snote>
+      </cfg>
+      <cfg fldsn="8" nodename="data50" nodetype="0" fldref="/data50" fnodename="/root" inodetype="0" ivaltype="0" iprecision="0" inodexp="[/root/result/znje]" dctname="" readyflag="" activeflag="">
+        <snote>滞纳金额</snote>
+      </cfg>
+      <cfg fldsn="9" nodename="data51" nodetype="0" fldref="/data51" fnodename="/root" inodetype="0" ivaltype="0" iprecision="0" inodexp="[/root/result/lxze]" dctname="" readyflag="" activeflag="">
+        <snote>当年存利息总额</snote>
+      </cfg>
+      <cfg fldsn="10" nodename="data53" nodetype="0" fldref="/data53" fnodename="/root" inodetype="0" ivaltype="0" iprecision="0" inodexp="[/root/result/zhcb]" dctname="" readyflag="" activeflag="">
+        <snote>最后抄表读数</snote>
+      </cfg>
+      <cfg fldsn="11" nodename="data68" nodetype="0" fldref="/data68" fnodename="/root" inodetype="0" ivaltype="0" iprecision="0" inodexp="[/root/result/bzdm]" dctname="" readyflag="" activeflag="">
+        <snote>标志代码</snote>
+      </cfg>
+      <cfg fldsn="12" nodename="data90" nodetype="0" fldref="/data90" fnodename="/root" inodetype="0" ivaltype="0" iprecision="0" inodexp="[/root/result/beiy]" dctname="" readyflag="" activeflag="">
+        <snote>备用</snote>
+      </cfg>
+    </xmlpcfg>
+  </appresreg>
+</hsdoc>

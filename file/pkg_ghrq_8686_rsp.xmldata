@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="GBK"?>
+
+<hsdoc>
+  <docversion>1.0.0</docversion>
+  <checkcode>35C1AFE7DA1028E8695391F5876EA313</checkcode>
+  <levelcheck>7133595049624C313957303D</levelcheck>
+  <appresreg resclass="402" ressubclass="400" resname="pkg_ghrq_I2O_8686" rescname="【外围渠道接入】港华燃气缴费冲正（内部XML转外部XML）" reslabel="" resversn="" useflag="0" activeflag="0" extflag="" readyflag="0" checkcode="" lastModify="2016-03-31 08:28:41" lastModifer="曹龙" rescreator="hsdz2" createdate="2015-08-05 10:15:26" reslevel="9" subclass="">
+    <snote></snote>
+    <document></document>
+    <xmlpcfg>
+      <cfg fldsn="0" nodename="root" nodetype="0" fldref="" fnodename="" inodetype="0" ivaltype="0" iprecision="0" inodexp="" dctname="" readyflag="" activeflag="">
+        <snote></snote>
+      </cfg>
+      <cfg fldsn="1" nodename="data63" nodetype="0" fldref="/data63" fnodename="/root" inodetype="0" ivaltype="0" iprecision="0" inodexp="[/pub/respcode]" dctname="" readyflag="" activeflag="">
+        <snote>响应码</snote>
+      </cfg>
+      <cfg fldsn="2" nodename="data64" nodetype="0" fldref="/data64" fnodename="/root" inodetype="0" ivaltype="0" iprecision="0" inodexp="[/pub/respmsg]" dctname="" readyflag="" activeflag="">
+        <snote>响应信息</snote>
+      </cfg>
+    </xmlpcfg>
+  </appresreg>
+</hsdoc>

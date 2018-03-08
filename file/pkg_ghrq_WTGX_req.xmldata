@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="GBK"?>
+
+<hsdoc>
+  <docversion>1.0.0</docversion>
+  <checkcode>22D5D6B6937F2354EF9F992204C160F9</checkcode>
+  <levelcheck>376679475A4D614D75764D3D</levelcheck>
+  <appresreg resclass="402" ressubclass="400" resname="pkg_ghrq_O2I_WTGX" rescname="【外围渠道接入】港华燃气委托关系查询（外部XML转内部XML）" reslabel="" resversn="" useflag="0" activeflag="0" extflag="" readyflag="0" checkcode="" lastModify="2016-03-29 10:39:39" lastModifer="曹龙" rescreator="hsdz2" createdate="2015-08-05 10:15:26" reslevel="9" subclass="">
+    <snote></snote>
+    <document></document>
+    <xmlpcfg>
+      <cfg fldsn="0" nodename="root_in" nodetype="0" fldref="" fnodename="" inodetype="0" ivaltype="0" iprecision="0" inodexp="" dctname="" readyflag="" activeflag="">
+        <snote></snote>
+      </cfg>
+      <cfg fldsn="1" nodename="pub" nodetype="0" fldref="/pub" fnodename="/root_in" inodetype="0" ivaltype="0" iprecision="0" inodexp="" dctname="" readyflag="" activeflag="">
+        <snote></snote>
+      </cfg>
+      <cfg fldsn="2" nodename="jgm" nodetype="0" fldref="/pub/jgm" fnodename="/root_in/pub" inodetype="0" ivaltype="0" iprecision="0" inodexp="[/data2]" dctname="" readyflag="" activeflag="">
+        <snote>机构码</snote>
+      </cfg>
+      <cfg fldsn="3" nodename="czy" nodetype="0" fldref="/pub/czy" fnodename="/root_in/pub" inodetype="0" ivaltype="0" iprecision="0" inodexp="[/data3]" dctname="" readyflag="" activeflag="">
+        <snote>操作员</snote>
+      </cfg>
+      <cfg fldsn="4" nodename="jyrq" nodetype="0" fldref="/pub/jyrq" fnodename="/root_in/pub" inodetype="0" ivaltype="0" iprecision="0" inodexp="[/data85]" dctname="" readyflag="" activeflag="">
+        <snote>交易日期</snote>
+      </cfg>
+      <cfg fldsn="5" nodename="jylsh" nodetype="0" fldref="/pub/jylsh" fnodename="/root_in/pub" inodetype="0" ivaltype="0" iprecision="0" inodexp="[/data77]" dctname="" readyflag="" activeflag="">
+        <snote>交易流水号</snote>
+      </cfg>
+      <cfg fldsn="6" nodename="ghrq" nodetype="0" fldref="/ghrq" fnodename="/root_in" inodetype="0" ivaltype="0" iprecision="0" inodexp="" dctname="" readyflag="" activeflag="">
+        <snote></snote>
+      </cfg>
+      <cfg fldsn="7" nodename="filename" nodetype="0" fldref="/ghrq/filename" fnodename="/root_in/ghrq" inodetype="0" ivaltype="0" iprecision="0" inodexp="[/data87]" dctname="" readyflag="" activeflag="">
+        <snote></snote>
+      </cfg>
+    </xmlpcfg>
+  </appresreg>
+</hsdoc>

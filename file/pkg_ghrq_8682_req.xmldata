@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="GBK"?>
+
+<hsdoc>
+  <docversion>1.0.0</docversion>
+  <checkcode>B972B1D974263F3FCC1B7899C6AE786D</checkcode>
+  <levelcheck>54416A4973466E516D76383D</levelcheck>
+  <appresreg resclass="402" ressubclass="400" resname="pkg_ghrq_O2I_8682" rescname="【外围渠道接入】港华燃气欠费缴费（外部XML转内部XML）" reslabel="" resversn="" useflag="0" activeflag="0" extflag="" readyflag="0" checkcode="" lastModify="2016-03-30 16:50:44" lastModifer="曹龙" rescreator="hsdz2" createdate="2015-08-05 10:15:26" reslevel="9" subclass="">
+    <snote></snote>
+    <document></document>
+    <xmlpcfg>
+      <cfg fldsn="0" nodename="root_in" nodetype="0" fldref="" fnodename="" inodetype="0" ivaltype="0" iprecision="0" inodexp="" dctname="" readyflag="" activeflag="">
+        <snote></snote>
+      </cfg>
+      <cfg fldsn="1" nodename="pub" nodetype="0" fldref="/pub" fnodename="/root_in" inodetype="0" ivaltype="0" iprecision="0" inodexp="" dctname="" readyflag="" activeflag="">
+        <snote></snote>
+      </cfg>
+      <cfg fldsn="2" nodename="jgm" nodetype="0" fldref="/pub/jgm" fnodename="/root_in/pub" inodetype="0" ivaltype="0" iprecision="0" inodexp="[/data2]" dctname="" readyflag="" activeflag="">
+        <snote>机构码</snote>
+      </cfg>
+      <cfg fldsn="3" nodename="czy" nodetype="0" fldref="/pub/czy" fnodename="/root_in/pub" inodetype="0" ivaltype="0" iprecision="0" inodexp="[/data3]" dctname="" readyflag="" activeflag="">
+        <snote>操作员</snote>
+      </cfg>
+      <cfg fldsn="4" nodename="jyrq" nodetype="0" fldref="/pub/jyrq" fnodename="/root_in/pub" inodetype="0" ivaltype="0" iprecision="0" inodexp="[/data11]" dctname="" readyflag="" activeflag="">
+        <snote>交易日期</snote>
+      </cfg>
+      <cfg fldsn="5" nodename="jyjgh" nodetype="0" fldref="/pub/jyjgh" fnodename="/root_in/pub" inodetype="0" ivaltype="0" iprecision="0" inodexp="[/data2]" dctname="" readyflag="" activeflag="">
+        <snote>交易机构号</snote>
+      </cfg>
+      <cfg fldsn="6" nodename="txcs" nodetype="0" fldref="/pub/txcs" fnodename="/root_in/pub" inodetype="0" ivaltype="0" iprecision="0" inodexp="[/data82]" dctname="" readyflag="" activeflag="">
+        <snote>通讯次数</snote>
+      </cfg>
+      <cfg fldsn="7" nodename="ghrqjr" nodetype="0" fldref="/ghrqjr" fnodename="/root_in" inodetype="0" ivaltype="0" iprecision="0" inodexp="" dctname="" readyflag="" activeflag="">
+        <snote></snote>
+      </cfg>
+      <cfg fldsn="8" nodename="jyrq" nodetype="0" fldref="/ghrqjr/jyrq" fnodename="/root_in/ghrqjr" inodetype="0" ivaltype="0" iprecision="0" inodexp="[/data11]" dctname="" readyflag="" activeflag="">
+        <snote>交易日期</snote>
+      </cfg>
+      <cfg fldsn="9" nodename="khbh" nodetype="0" fldref="/ghrqjr/khbh" fnodename="/root_in/ghrqjr" inodetype="0" ivaltype="0" iprecision="0" inodexp="[/data65]" dctname="" readyflag="" activeflag="">
+        <snote>客户编号</snote>
+      </cfg>
+      <cfg fldsn="10" nodename="fkkh" nodetype="0" fldref="/ghrqjr/fkkh" fnodename="/root_in/ghrqjr" inodetype="0" ivaltype="0" iprecision="0" inodexp="[/data92]" dctname="" readyflag="" activeflag="">
+        <snote>付款卡号</snote>
+      </cfg>
+      <cfg fldsn="11" nodename="fkzh" nodetype="0" fldref="/ghrqjr/fkzh" fnodename="/root_in/ghrqjr" inodetype="0" ivaltype="0" iprecision="0" inodexp="[/data23]" dctname="" readyflag="" activeflag="">
+        <snote>付款账号</snote>
+      </cfg>
+      <cfg fldsn="12" nodename="kzbz" nodetype="0" fldref="/ghrqjr/kzbz" fnodename="/root_in/ghrqjr" inodetype="0" ivaltype="0" iprecision="0" inodexp="[/data67]" dctname="" readyflag="" activeflag="">
+        <snote>卡折标志</snote>
+      </cfg>
+      <cfg fldsn="13" nodename="fkfs" nodetype="0" fldref="/ghrqjr/fkfs" fnodename="/root_in/ghrqjr" inodetype="0" ivaltype="0" iprecision="0" inodexp="[/data48]" dctname="" readyflag="" activeflag="">
+        <snote>付款方式</snote>
+      </cfg>
+      <cfg fldsn="14" nodename="sfms" nodetype="0" fldref="/ghrqjr/sfms" fnodename="/root_in/ghrqjr" inodetype="0" ivaltype="0" iprecision="0" inodexp="[/data69]" dctname="" readyflag="" activeflag="">
+        <snote>收费模式</snote>
+      </cfg>
+      <cfg fldsn="15" nodename="jfje" nodetype="0" fldref="/ghrqjr/jfje" fnodename="/root_in/ghrqjr" inodetype="0" ivaltype="0" iprecision="0" inodexp="[/data30]" dctname="" readyflag="" activeflag="">
+        <snote>缴费金额</snote>
+      </cfg>
+      <cfg fldsn="16" nodename="fpdybz" nodetype="0" fldref="/ghrqjr/fpdybz" fnodename="/root_in/ghrqjr" inodetype="0" ivaltype="0" iprecision="0" inodexp="[/data68]" dctname="" readyflag="" activeflag="">
+        <snote>发票打印标志</snote>
+      </cfg>
+      <cfg fldsn="17" nodename="zqfs" nodetype="0" fldref="/ghrqjr/zqfs" fnodename="/root_in/ghrqjr" inodetype="0" ivaltype="0" iprecision="0" inodexp="[/data25]" dctname="" readyflag="" activeflag="">
+        <snote>支取方式</snote>
+      </cfg>
+      <cfg fldsn="18" nodename="qbzs" nodetype="0" fldref="/ghrqjr/qbzs" fnodename="/root_in/ghrqjr" inodetype="0" ivaltype="0" iprecision="0" inodexp="[/data54]" dctname="" readyflag="" activeflag="">
+        <snote>券别张数</snote>
+      </cfg>
+      <cfg fldsn="19" nodename="khmc" nodetype="0" fldref="/ghrqjr/khmc" fnodename="/root_in/ghrqjr" inodetype="0" ivaltype="0" iprecision="0" inodexp="[/data79]" dctname="" readyflag="" activeflag="">
+        <snote>客户名称</snote>
+      </cfg>
+      <cfg fldsn="20" nodename="track2" nodetype="0" fldref="/ghrqjr/track2" fnodename="/root_in/ghrqjr" inodetype="0" ivaltype="0" iprecision="0" inodexp="[/data7]" dctname="" readyflag="" activeflag="">
+        <snote>2磁道信息</snote>
+      </cfg>
+      <cfg fldsn="21" nodename="mm" nodetype="0" fldref="/ghrqjr/mm" fnodename="/root_in/ghrqjr" inodetype="0" ivaltype="0" iprecision="0" inodexp="[/data4]" dctname="" readyflag="" activeflag="">
+        <snote>密码</snote>
+      </cfg>
+      <cfg fldsn="22" nodename="sqxx" nodetype="0" fldref="/ghrqjr/sqxx" fnodename="/root_in/ghrqjr" inodetype="0" ivaltype="0" iprecision="0" inodexp="[/data90]" dctname="" readyflag="" activeflag="">
+        <snote></snote>
+      </cfg>
+    </xmlpcfg>
+  </appresreg>
+</hsdoc>
