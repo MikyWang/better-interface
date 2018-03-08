@@ -4,30 +4,30 @@
   <docversion>1.0.0</docversion>
   <checkcode>6E9F775659AE889CECB711FA731C8E2E</checkcode>
   <levelcheck>494443504166566D7A786F3D</levelcheck>
-  <appresreg resclass="404" ressubclass="404" resname="pkg_hysw_51_req" rescname="æ’¤é”€ä»£æ‰£å…³ç³»" reslabel="" resversn="" useflag="0" activeflag="0" extflag="00000000" readyflag="0" checkcode="@11@" lastModify="2016-05-12 09:51:11" lastModifer="æ›¹é¾™" rescreator="PKGå¯¼å…¥" createdate="20110620200643" reslevel="9" subclass="">
-    <snote>æ’¤é”€ä»£æ‰£å…³ç³»</snote>
+  <appresreg resclass="404" ressubclass="404" resname="pkg_hysw_51_req" rescname="³·Ïú´ú¿Û¹ØÏµ" reslabel="" resversn="" useflag="0" activeflag="0" extflag="00000000" readyflag="0" checkcode="@11@" lastModify="2016-05-12 09:51:11" lastModifer="²ÜÁú" rescreator="PKGµ¼Èë" createdate="20110620200643" reslevel="9" subclass="">
+    <snote>³·Ïú´ú¿Û¹ØÏµ</snote>
     <document></document>
     <icxpcfg>
       <cfg fldsn="0" fldref="/pub/swjydm" fldtype="C" tranlen="2" cycletype="0" iprecision="0" izoom="0" iregular="L" cfiller="32" fseparator="" bseparator="" convfunc="" convexp="" readyflag="0" activeflag="0" dctname="">
-        <snote>äº¤æ˜“ç </snote>
+        <snote>½»Ò×Âë</snote>
       </cfg>
       <cfg fldsn="1" fldref="/pub/swczy" fldtype="C" tranlen="8" cycletype="0" iprecision="0" izoom="0" iregular="L" cfiller="32" fseparator="" bseparator="" convfunc="" convexp="" readyflag="0" activeflag="0" dctname="">
-        <snote>æ“ä½œå‘˜</snote>
+        <snote>²Ù×÷Ô±</snote>
       </cfg>
       <cfg fldsn="2" fldref="/hysw/req/lsh" fldtype="C" tranlen="8" cycletype="0" iprecision="0" izoom="0" iregular="L" cfiller="32" fseparator="" bseparator="" convfunc="" convexp="" readyflag="0" activeflag="0" dctname="">
-        <snote>æµæ°´å·</snote>
+        <snote>Á÷Ë®ºÅ</snote>
       </cfg>
       <cfg fldsn="3" fldref="/hysw/req/khbh" fldtype="C" tranlen="16" cycletype="0" iprecision="0" izoom="0" iregular="L" cfiller="32" fseparator="" bseparator="" convfunc="" convexp="" readyflag="0" activeflag="0" dctname="">
-        <snote>å®¢æˆ·ç¼–å·</snote>
+        <snote>¿Í»§±àºÅ</snote>
       </cfg>
       <cfg fldsn="4" fldref="/hysw/req/yhbm" fldtype="C" tranlen="4" cycletype="0" iprecision="0" izoom="0" iregular="L" cfiller="32" fseparator="" bseparator="" convfunc="" convexp="" readyflag="0" activeflag="0" dctname="">
-        <snote>é“¶è¡Œç¼–ç </snote>
+        <snote>ÒøÐÐ±àÂë</snote>
       </cfg>
       <cfg fldsn="5" fldref="/hysw/req/yhmc" fldtype="C" tranlen="64" cycletype="0" iprecision="0" izoom="0" iregular="L" cfiller="32" fseparator="" bseparator="" convfunc="" convexp="" readyflag="0" activeflag="0" dctname="">
-        <snote>é“¶è¡Œåç§°</snote>
+        <snote>ÒøÐÐÃû³Æ</snote>
       </cfg>
       <cfg fldsn="6" fldref="/hysw/req/jyrq" fldtype="C" tranlen="8" cycletype="0" iprecision="0" izoom="0" iregular="L" cfiller="32" fseparator="" bseparator="" convfunc="" convexp="" readyflag="0" activeflag="0" dctname="">
-        <snote>æ’¤é”€æ—¶é—´</snote>
+        <snote>³·ÏúÊ±¼ä</snote>
       </cfg>
     </icxpcfg>
     <pkgregex dftpath=""/>
