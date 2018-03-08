@@ -267,7 +267,7 @@ function getField(fileConfig, models, model) {
             if (model.$.convexp) {
                 field.fieldLength = model.$.convexp.replace('|', 'P');
             } else {
-                field.fieldLength = '';
+                field.fieldLength = model.$.tranlen;
             }
             let convfunc = 'ATOE';
             if (model.$.convfunc) {
